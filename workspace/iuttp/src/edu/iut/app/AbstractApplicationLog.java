@@ -14,7 +14,9 @@ public abstract class AbstractApplicationLog implements IApplicationLog {
 	}
 	
     /** TP1 : Fonction venant de l'interface par héritage */
-
+	void setMessage(){
+		
+	}
 
 	/** Listener action */
 	protected void fireMessage(String level, String message) {
