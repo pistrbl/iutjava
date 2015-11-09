@@ -8,24 +8,11 @@ public interface IApplicationLog {
 	  - getApplicationLogListeners();
 	*/
 	
-	static void setMessage(String message){
-		
-		
-	}
+	void setMessage(String message);
 	
-	static String getMessage(){
-		return null ;	
-		
-	}
+	public String getMessage();
 	
-	static void addListener(IApplicationLogListener listener){
-		
-		
-	}
+	public void addListener(IApplicationLogListener listener);
 	
-	static IApplicationLogListener[] getpplicationLogListeners(){
-		return null;
-		
-		
-	}
+	IApplicationLogListener[] getpplicationLogListeners();
 }

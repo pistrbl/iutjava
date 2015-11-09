@@ -12,5 +12,17 @@ public class ApplicationInfoLog extends AbstractApplicationLog {
 		this.message = message;
         super.fireMessage("[INFO]", this.message);
 	}
+	
+	public String getMessage() {
+		return null;
+	}
+
+	public void addListener(IApplicationLogListener listener) {
+		
+	}
+
+	public IApplicationLogListener[] getpplicationLogListeners() {
+		return null;
+	}
 
 }

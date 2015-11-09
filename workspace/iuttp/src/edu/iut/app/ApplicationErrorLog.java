@@ -13,5 +13,16 @@ public class ApplicationErrorLog extends AbstractApplicationLog {
 		super.fireMessage("[ERROR]", this.message);
 	}
 
+	public String getMessage() {
+		return null;
+	}
+
+	public void addListener(IApplicationLogListener listener) {
+		
+	}
+
+	public IApplicationLogListener[] getpplicationLogListeners() {
+		return null;
+	}
 
 }

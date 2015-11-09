@@ -12,4 +12,16 @@ public class ApplicationWarningLog extends AbstractApplicationLog {
 		this.message = message;
 		super.fireMessage("[WARNING]", this.message);
 	}
+	
+	public String getMessage() {
+		return null;
+	}
+
+	public void addListener(IApplicationLogListener listener) {
+		
+	}
+
+	public IApplicationLogListener[] getpplicationLogListeners() {
+		return null;
+	}
 }
