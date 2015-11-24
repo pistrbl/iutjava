@@ -1,0 +1,140 @@
+import java.sql.*;
+import java.io.*;
+public class OutilsJDBC {
+	public static Connection openConnection (String url) {
+		Connection co=null;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			co=
+					DriverManager.getConnection(url);
+		}
+		catch (ClassNotFoundException e){
+			System.out.println("il manque le driver oracle");
+			System.exit(1);
+		}
+		catch (SQLException e) {
+			System.out.println("impossible de se connecter à l'url : "+url);
+			System.
+			exit(1);
+		}
+		return co;
+	}
+	public static ResultSet exec1Requete (String requete, Connection co, int type){
+		ResultSet res=null;
+		try {
+			Statement st;
+			if (type==0){
+				st=co.createStatement();}
+			else {
+				st=co.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, 
+						ResultSet.CONCUR_READ_ONLY);
+			};
+			res= st.executeQuery(requete);
+		}
+		catch (SQLException e){
+			System.out.println("Problème lors de l'exécution de la requete : "+requete);
+		};
+		return res;
+	}
+	public static void closeConnection(Connection co){
+		try {
+			co.close();
+			System.out.println("Connexion fermée!");
+		}
+		catch (SQLException e) {
+			System.out.println("Impossible de fermer la connexion");
+		}
+	}
+	
+	public static String chaine() {
+		String valeur;
+		try {
+			BufferedReader entree= new BufferedReader(new InputStreamReader(System.in));
+			valeur = entree.readLine();
+			return (valeur);
+		}
+		catch (IOException e){
+			System.out.println("Probleme de lecture");
+			return(" ");
+		}
+	}
+	public static int entier (){
+		String valeur;
+		try {
+			BufferedReader entree= new BufferedReader(new InputStreamReader(System.in));
+			valeur = entree.readLine();
+			int ent=Integer.parseInt(valeur,10);
+			return ent;
+		}
+		catch (IOException e){
+			System.out.println("Probleme de lecture");
+			return(0);
+		}
+	}
+	
+	public static void main(String[] args){
+		String url="jdbc:oracle:thin:pstraeb/OZuMDGA6@r2d2.etu.iut-orsay.fr:1521:etudom";
+		Connection co=OutilsJDBC.openConnection(url);
+		System.out.println("connexion ouverte");
+		System.out.println("\n");
+		//traitement et requete OutilsJDBC.closeConnection(co);
+
+		//Question 1
+		System.out.println("Question 1");
+		
+		Statement stmt;
+		String requete =  "SELECT * FROM ens2004.film";
+		
+		try {
+			stmt = co.createStatement ( );
+			ResultSet rs = stmt.executeQuery(requete);
+			ResultSetMetaData rsmd = rs.getMetaData ( );
+			int nbColones = rsmd.getColumnCount ( );
+			System.out.println("Name    Null?     Type");
+			for (int i=1; i<=nbColones; i++){
+				int nul = rsmd.isNullable(i);
+				String name = rsmd.getColumnName(i);
+				String type = rsmd.getColumnTypeName(i);
+				int length = rsmd.getColumnDisplaySize(i);
+				if(nul==0) System.out.println(name + "    NOT NULL   " + type+"("+length+")");
+				else System.out.println(name + "       " + type+"("+length+")");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		System.out.println("\n");
+		
+		//Question 2
+		System.out.println("Quesion 2");
+		
+		System.out.println("Veuillez entrer un nom d'acteur : ");
+		String acteur = chaine();
+		
+		String reqAct = "SELECT indiv.numindividu, indiv.nomindividu, indiv.prenomindividu FROM ens2004.acteur act, ens2004.individu indiv WHERE indiv.numindividu=act.numindividu AND indiv.NomIndividu= '" + acteur + "'";
+		String reqFilm = "SELECT film.numFilm, film.titre FROM ens2004.film film, ens2004.acteur act, ens2004.individu indiv WHERE film.numFilm=act.numFilm AND indiv.numindividu=act.numindividu AND indiv.nomindividu='? AND indiv.prenomIndividu=?";
+			
+		try {
+			PreparedStatement psm = co.prepareStatement(reqFilm);
+			ResultSet rsAct=exec1Requete(reqAct, co, 1);
+			while(rsAct.next()){
+				psm.setString(1, acteur);
+				ResultSet rsFilm=psm.executeQuery();
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		//Question 3
+		String nbreFilms1 = "CREATE OR REPLACE FUNCTION nbreFilms1 (acteur IN ens2004.INDIVIDU.numindividu%type) RETURN NUMBER IS nb NUMBER BEGIN SELECT COUNT(*) INTO nb FROM ENS2004.ACTEUR a, ENS2004.INDIVIDU i WHERE a.numindividu = i.numindividu AND i.numindividu = acteur RETURN nb; END nbreFilms1;";
+				
+						
+			
+		System.out.println("\n");
+		OutilsJDBC.closeConnection(co);
+		// System.out.println("connexion fermee");
+	}
+};

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class ExamEvent {
+	private String maritalStatus;
 	public ExamEvent() {		
 	}
 	
@@ -19,4 +20,7 @@ public class ExamEvent {
 	protected Classroom classroom;
 	protected ArrayList<Document> documents;
 	 
+	public String getMaritalStatus() {
+	      return maritalStatus;
+	   }	
 }
