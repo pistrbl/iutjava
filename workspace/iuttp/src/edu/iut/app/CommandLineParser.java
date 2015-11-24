@@ -9,7 +9,7 @@ public class CommandLineParser {
 	protected HashMap<String, CommandLineOption /* EX1: option generique */> options;
 	protected ArrayList<String> parseErrors;
 		
-	public CommandLineParser() {
+	/*public CommandLineParser() {
 		options = new HashMap<String, CommandLineOption<?> >();
 		parseErrors = new ArrayList<String>();
 	}
@@ -34,16 +34,16 @@ public class CommandLineParser {
 							parseErrors.add("Option should have a key and a value.");
 						}
 						break;
-					/* EX1 : reproduire le comportement de 'case FILE', pour STRING,INTEGER, ... */
+					// EX1 : reproduire le comportement de 'case FILE', pour STRING,INTEGER, ... 
 
 					default:
 						parseErrors.add("Unrecognize option type.");						
 				}
 			}
 		}
-	}
+	}*/
 	
-	public CommandLineOption<?> getOption(String key) {
+	/*public CommandLineOption<?> getOption(String key) {
 		if (options.containsKey(key)) {
 			return options.get(key);
 		}
@@ -52,6 +52,6 @@ public class CommandLineParser {
 	
 	public ArrayList<String> getErrors() {
 		return parseErrors;
-	}
+	}*/
 	
 }
