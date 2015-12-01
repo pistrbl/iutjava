@@ -5,6 +5,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="F:\Documents\Documents\IUT_INFORMATIQUE_ORSAY\S3\CPO_B\iutjava\workspace\iuttp"/>
+			<item value="F:\Documents\Documents\IUT_INFORMATIQUE_ORSAY\S3\CPO_B\TP3"/>
+			<item value="F:\Documents\Documents\IUT_INFORMATIQUE_ORSAY\S3\BD\TP1"/>
+			<item value="F:\Documents\Documents\IUT_INFORMATIQUE_ORSAY\S3\BD\TP2"/>
+			<item value="F:\Documents\Documents\IUT_INFORMATIQUE_ORSAY\S3\CPO_B\iutjava\workspace"/>
 			<item value="D:\Documents\IUT_INFORMATIQUE_ORSAY\S3\CPO_B\iutjava\workspace\iuttp"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
