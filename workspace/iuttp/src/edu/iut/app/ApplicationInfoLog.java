@@ -6,6 +6,11 @@ public class ApplicationInfoLog extends AbstractApplicationLog {
 		super();
 	}
 	
+	/**
+	 * @param message
+	 * Initialise tous les logs avec le message passe en parametre 
+	 */
+	
 	@Override
 	public void setMessage(String message) {
 		this.message = message;

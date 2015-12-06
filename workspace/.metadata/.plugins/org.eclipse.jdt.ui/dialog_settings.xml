@@ -18,9 +18,14 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="F:\Documents\Documents\IUT_INFORMATIQUE_ORSAY\S3\CPO_B\iutjava\workspace\iuttp\javadoc" key="destdir"/>
+		<item value="C:\Users\pierre.straebler\Desktop\javadoc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
+			<section name="iuttp">
+				<item value="F:\Documents\Documents\IUT_INFORMATIQUE_ORSAY\S3\CPO_B\iutjava\workspace\iuttp\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\pierre.straebler\Desktop\javadoc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 		</section>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">

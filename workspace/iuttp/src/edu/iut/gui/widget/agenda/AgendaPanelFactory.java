@@ -29,7 +29,11 @@ public class AgendaPanelFactory {
 	
 	public AgendaPanelFactory() {
 	}
-	
+	/**
+	 * Retourne la vue sélectionnée
+	 * @param activeView Vue à mettre
+	 * @return Une vue
+	 */
 	public JPanel getAgendaView(ActiveView activeView) {
 		JPanel agendaView = null;
 		switch (activeView) {

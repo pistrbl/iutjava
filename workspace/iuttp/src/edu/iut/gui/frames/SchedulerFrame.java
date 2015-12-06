@@ -10,6 +10,11 @@ import edu.iut.gui.widget.agenda.AgendaPanelFactory;
 import edu.iut.gui.widget.agenda.ControlAgendaViewPanel;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
 
+/**
+ * 
+ * @author pierre.straebler
+ *gere la partie graphique de l'application
+ */
 
 public class SchedulerFrame extends JFrame {
 	JPanel contentPane;

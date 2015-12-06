@@ -5,7 +5,10 @@ public class ApplicationWarningLog extends AbstractApplicationLog {
 	public ApplicationWarningLog() {
 		super();
 	}
-	
+	/**
+	 * @param message
+	 * Initialise tous les logs avec le message passé en paramètre 
+	 */
 	@Override
 	public void setMessage(String message) {
 		this.message = message;

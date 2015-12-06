@@ -2,7 +2,11 @@ package edu.iut.app;
 
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * 
+ * @author pierre.straebler
+ * Permet de récuperer et de creer les ExamEvent
+ */
 public class ExamEvent {
 	private String maritalStatus;
 	public ExamEvent() {		

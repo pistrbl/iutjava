@@ -5,6 +5,11 @@ public class Classroom {
 	public Classroom() {
 		classRoomNumber="not affected";
 	}
+	/**
+	 * 
+	 * @param classRoomNumber
+	 * Affectation de la classe
+	 */
 	public Classroom(String classRoomNumber) {
 		/* EX2: AFFECTATION */;
 		this.classRoomNumber = classRoomNumber;
@@ -14,6 +19,11 @@ public class Classroom {
 		/* EX2: AFFECTATION */;
 		this.classRoomNumber = number ;
 	}
+	/**
+	 * 
+	 * @return number 
+	 * Renvoie le numero de la salle
+	 */
 	public String getClassRoomNumber() {
 		return classRoomNumber;
 	}

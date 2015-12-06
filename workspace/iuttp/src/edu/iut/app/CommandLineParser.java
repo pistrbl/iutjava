@@ -3,7 +3,11 @@ package edu.iut.app;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.io.File;
-
+/**
+ * Classe sur les Parser
+ * @author pierre.straebler
+ *
+ */
 public class CommandLineParser {
 	
 	protected HashMap<String, CommandLineOption<?>> options;

@@ -74,14 +74,27 @@ public class ControlAgendaViewPanel extends JPanel {
 		this.add(day);
 	}
 
+	/**
+	 * Obtenir l'année sélectionnée
+	 * @return Année
+	 */
 	public int getYear() {
 		return selectedYear;
 	}
+	/**
+	 * Obtenir le mois sélectionné
+	 * @return Mois
+	 */
 	public int getMonth() {
 		return selectedMonth;
 	}
+	/**
+	 * Obtenir le jour sélectionné
+	 * @return Jour
+	 */
 	public int getDay() {
 		return selectedDay;
 	}
+	
 
 }
